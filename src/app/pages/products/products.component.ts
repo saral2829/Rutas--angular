@@ -12,6 +12,7 @@ import { Product } from '../../models/product';
 export class ProductsComponent implements OnInit {
  
   productId:string | null =null;
+  products: Product[]=[];
   constructor( private route: ActivatedRoute, private productService:ProductsService) { }
 
   ngOnInit(): void {
@@ -20,7 +21,13 @@ export class ProductsComponent implements OnInit {
       console.log(this.productId)
     })
 
-    console.log(this.productService.getAllProducts());
+    this.products= this.productService.getAllProducts();
+   
+    if(this.productId){
+      console.log(this.productService.getProductById(this.productId))
+    }
+    
+
   }
 
  
