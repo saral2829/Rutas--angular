@@ -5,6 +5,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes:Routes =[
   {
@@ -18,7 +19,7 @@ const routes:Routes =[
     component:HomeComponent
   },
   {
-    path: 'products',
+    path: 'products/:id',
     component:ProductsComponent
   },
   {
@@ -28,6 +29,10 @@ const routes:Routes =[
   {
     path:'contact',
     component:ContactComponent
+  },
+  {
+    path:'**',
+    component:NotFoundComponent
   }
 ];
 
